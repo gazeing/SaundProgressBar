@@ -23,7 +23,18 @@
         android:layout_marginTop="50dp"
         android:paddingLeft="15dip"
         android:paddingRight="15dip"
-        saund:offset="3dip"
-        saund:textSize="10sp" />
+        saund:offset="5dip"
+        saund:textSize="16sp" />
+    
+        <com.kince.saundprogressbar.widget.SideHpProgressBar
+        android:id="@+id/hprprogressbar"
+        style="@style/Widget.ProgressBar.RegularProgressBar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:paddingLeft="15dip"
+        android:paddingRight="15dip"
+        saund:offset="5dip"
+        saund:textSize="16sp" />
 
 </LinearLayout>

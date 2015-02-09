@@ -1,19 +1,3 @@
-/*
- * Copyright (C) 2014 kince
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package com.kince.saundprogressbar.widget;
 
 import com.kince.saundprogressbar.R;
@@ -22,42 +6,31 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Paint.Align;
 import android.graphics.Rect;
+import android.graphics.Paint.Align;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
 import android.text.TextPaint;
 import android.util.AttributeSet;
 import android.widget.ProgressBar;
 
-/**
- * An enhanced version of the ProgressBar which provides greater control over
- * how the progress bar is drawn and displayed. The motivation is to allow us to
- * customize the appearance of the progress bar more freely. We can now display
- * a rounded cap at the end of the progress bar and optionally show an overlay.
- * We can also present a progress indicator to show the percentage completed or
- * a more customized value by implementing the Formatter interface.
- * 
- * @author kince
- * 
- */
-public class SaundProgressBar extends ProgressBar {
+public class SideHpProgressBar extends ProgressBar {
+	
 	protected Drawable m_indicator;
 	protected int m_offset = 5;
 	protected TextPaint m_textPaint;
 	protected Formatter m_formatter;
 
-	public SaundProgressBar(Context context) {
+	public SideHpProgressBar(Context context) {
 		this(context, null);
 	}
 
-	public SaundProgressBar(Context context, AttributeSet attrs) {
+	public SideHpProgressBar(Context context, AttributeSet attrs) {
 		this(context, attrs, 0);
 	}
 
-	public SaundProgressBar(Context context, AttributeSet attrs, int defStyle) {
+	public SideHpProgressBar(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
-
 		// create a default progress bar indicator text paint used for drawing
 		// the
 		// text on to the canvas
@@ -110,6 +83,8 @@ public class SaundProgressBar extends ProgressBar {
 
 			a.recycle();
 		}
+		
+		
 	}
 
 	/**
@@ -185,6 +160,11 @@ public class SaundProgressBar extends ProgressBar {
 	 */
 	public void setPaint(TextPaint paint) {
 		m_textPaint = paint;
+	}
+	
+	public void setBarHeight(int height){
+		this.getLayoutParams().height = height;
+		this.invalidate();
 	}
 
 	@Override
@@ -272,24 +252,24 @@ public class SaundProgressBar extends ProgressBar {
 		// bar
 		if (m_indicator != null) {
 			canvas.save();
-			int dx = 0;
-
-			// get the position of the progress bar's right end
-			if (progressDrawable != null
-					&& progressDrawable instanceof LayerDrawable) {
-				LayerDrawable d = (LayerDrawable) progressDrawable;
-				Drawable progressBar = d.findDrawableByLayerId(R.id.progress);
-				dx = progressBar.getBounds().right;
-			} else if (progressDrawable != null) {
-				dx = progressDrawable.getBounds().right;
-			}
-
-			// adjust for any additional offset
-			dx = dx - getIndicatorWidth() / 2 - m_offset + getPaddingLeft();
-
-			// translate the canvas to the position where we should draw the
-			// indicator
-			canvas.translate(dx, 0);
+//			int dx = 0;
+//
+//			// get the position of the progress bar's right end
+//			if (progressDrawable != null
+//					&& progressDrawable instanceof LayerDrawable) {
+//				LayerDrawable d = (LayerDrawable) progressDrawable;
+//				Drawable progressBar = d.findDrawableByLayerId(R.id.progress);
+//				dx = progressBar.getBounds().right;
+//			} else if (progressDrawable != null) {
+//				dx = progressDrawable.getBounds().right;
+//			}
+//
+//			// adjust for any additional offset
+//			dx = dx - getIndicatorWidth() / 2 - m_offset + getPaddingLeft();
+//
+//			// translate the canvas to the position where we should draw the
+//			// indicator
+			canvas.translate((progressDrawable.getBounds().right-progressDrawable.getBounds().left)/2 , getLayoutParams().height/2 + getIndicatorHeight()*3/4);
 
 			m_indicator.draw(canvas);
 
@@ -385,4 +365,7 @@ public class SaundProgressBar extends ProgressBar {
 	public interface Formatter {
 		public String getText(int progress);
 	}
+	
+
+	
 }

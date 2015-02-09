@@ -30,7 +30,8 @@ limitations under the License.
   >
     <bitmap
       android:src="@drawable/progressbar_pattern"
-      android:tileMode="repeat"
+      android:tileMode="repeat" 
+      
     />
   </item>
 </layer-list>

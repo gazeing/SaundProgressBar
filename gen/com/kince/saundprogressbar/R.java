@@ -64,6 +64,9 @@ containing a value of this type.
          */
         public static final int textStyle=0x7f010003;
     }
+    public static final class color {
+        public static final int transparent=0x7f040000;
+    }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
 
@@ -83,19 +86,21 @@ containing a value of this type.
         public static final int progressbar_bar=0x7f020004;
         public static final int progressbar_bg=0x7f020005;
         public static final int progressbar_pattern=0x7f020006;
+        public static final int white_progress_indicator=0x7f020007;
     }
     public static final class id {
-        public static final int bold=0x7f040001;
-        public static final int center=0x7f040004;
-        public static final int checkHeader=0x7f040007;
-        public static final int italic=0x7f040002;
-        public static final int layout=0x7f040006;
-        public static final int left=0x7f040003;
-        public static final int normal=0x7f040000;
-        public static final int pattern=0x7f04000a;
-        public static final int progress=0x7f040009;
-        public static final int regularprogressbar=0x7f040008;
-        public static final int right=0x7f040005;
+        public static final int bold=0x7f080000;
+        public static final int center=0x7f080003;
+        public static final int checkHeader=0x7f080007;
+        public static final int hprprogressbar=0x7f080009;
+        public static final int italic=0x7f080001;
+        public static final int layout=0x7f080006;
+        public static final int left=0x7f080004;
+        public static final int normal=0x7f080002;
+        public static final int pattern=0x7f08000b;
+        public static final int progress=0x7f08000a;
+        public static final int regularprogressbar=0x7f080008;
+        public static final int right=0x7f080005;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
