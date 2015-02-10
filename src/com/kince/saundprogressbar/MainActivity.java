@@ -2,6 +2,7 @@ package com.kince.saundprogressbar;
 
 import com.kince.saundprogressbar.widget.SaundProgressBar;
 import com.kince.saundprogressbar.widget.SideHpProgressBar;
+import com.kince.saundprogressbar.widget.SideHpProgressBar.Formatter;
 
 import android.view.View;
 import android.widget.ProgressBar;
@@ -17,6 +18,8 @@ public class MainActivity extends Activity {
 
 	private SaundProgressBar mPbar;
 	private SideHpProgressBar mHpbar;
+	
+	ProgressBar pb;
     private int progress=0;
     private Message message;
     private Handler handler=new Handler(){
@@ -28,6 +31,7 @@ public class MainActivity extends Activity {
 			int p=msg.what;
 			mPbar.setProgress(p);
 			mHpbar.setProgress(p);
+			pb.setProgress(p);
 		}
     	
     };
@@ -50,8 +54,22 @@ public class MainActivity extends Activity {
 		mHpbar = (SideHpProgressBar) this.findViewById(R.id.hprprogressbar);
 		initProgressBar(mHpbar);
 		mHpbar.setProgressIndicator(indicator);
-		mHpbar.setBarHeight(50);
+		mHpbar.setBarHeight(150);
+		mHpbar.setTextColor(Color.BLACK);
 		
+		Formatter textFormatter = new Formatter() {
+			
+			@Override
+			public String getText(int progress) {
+				
+				return progress + " / 100"  ;
+			}
+		};
+		mHpbar.setTextFormatter(textFormatter);
+		
+		
+		pb = (ProgressBar)findViewById(R.id.pb);
+		initProgressBar(pb);
 		new Thread(runnable).start();
 	}
 	

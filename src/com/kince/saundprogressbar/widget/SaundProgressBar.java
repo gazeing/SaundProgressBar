@@ -383,6 +383,8 @@ public class SaundProgressBar extends ProgressBar {
 	 * 
 	 */
 	public interface Formatter {
+	
+		
 		public String getText(int progress);
 	}
 }

@@ -29,6 +29,7 @@
         <com.kince.saundprogressbar.widget.SideHpProgressBar
         android:id="@+id/hprprogressbar"
         style="@style/Widget.ProgressBar.RegularProgressBar"
+        
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
@@ -36,5 +37,17 @@
         android:paddingRight="15dip"
         saund:offset="5dip"
         saund:textSize="16sp" />
+        
+        
+
+	<ProgressBar 
+	android:id="@+id/pb"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:background="@drawable/progress_bg"
+        android:progressDrawable="@drawable/progress_vertical"
+        android:layout_width="100dp"
+        android:layout_height="80dp"/>
+
+        
 
 </LinearLayout>

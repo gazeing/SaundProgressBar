@@ -269,7 +269,7 @@ public class SideHpProgressBar extends ProgressBar {
 //
 //			// translate the canvas to the position where we should draw the
 //			// indicator
-			canvas.translate((progressDrawable.getBounds().right-progressDrawable.getBounds().left)/2 , getLayoutParams().height/2 + getIndicatorHeight()*3/4);
+			canvas.translate((progressDrawable.getBounds().right-progressDrawable.getBounds().left)/2 , /*getLayoutParams().height/2 + getIndicatorHeight()*3/4*/0);
 
 			m_indicator.draw(canvas);
 
