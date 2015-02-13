@@ -4,7 +4,7 @@
     <item android:id="@android:id/progress">
         <clip
             android:clipOrientation="vertical"
-            android:drawable="@drawable/progress"
+            android:drawable="@drawable/orb_hp"
             android:gravity="bottom" >
         </clip>
     </item>

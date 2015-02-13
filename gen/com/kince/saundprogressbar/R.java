@@ -83,15 +83,17 @@ containing a value of this type.
         public static final int castbar_short=0x7f020001;
         public static final int headerwithwood=0x7f020002;
         public static final int ic_launcher=0x7f020003;
-        public static final int progress=0x7f020004;
-        public static final int progress_bg=0x7f020005;
-        public static final int progress_indicator=0x7f020006;
-        public static final int progress_vertical=0x7f020007;
-        public static final int progressbar=0x7f020008;
-        public static final int progressbar_bar=0x7f020009;
-        public static final int progressbar_bg=0x7f02000a;
-        public static final int progressbar_pattern=0x7f02000b;
-        public static final int white_progress_indicator=0x7f02000c;
+        public static final int orb_empty=0x7f020004;
+        public static final int orb_hp=0x7f020005;
+        public static final int progress=0x7f020006;
+        public static final int progress_bg=0x7f020007;
+        public static final int progress_indicator=0x7f020008;
+        public static final int progress_vertical=0x7f020009;
+        public static final int progressbar=0x7f02000a;
+        public static final int progressbar_bar=0x7f02000b;
+        public static final int progressbar_bg=0x7f02000c;
+        public static final int progressbar_pattern=0x7f02000d;
+        public static final int white_progress_indicator=0x7f02000e;
     }
     public static final class id {
         public static final int bold=0x7f080000;
